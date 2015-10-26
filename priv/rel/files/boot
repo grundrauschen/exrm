@@ -200,7 +200,6 @@ generate_sys_config() {
                 __conform="$ROOTDIR/bin/conform"
             fi
 
-            CONFORM_OPTS="-conform_schema ${__schema_file} -conform_config ${__conform_file}"
             result="$("$BINDIR/escript" "$__conform" --conf "$__conform_file" --schema "$__schema_file" --config "$RELEASE_CONFIG_DIR/sys.config" --output-dir "$GENERATED_CONFIG_DIR")"
             exit_status="$?"
             if [ "$exit_status" -ne 0 ]; then
